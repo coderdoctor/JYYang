@@ -1,16 +1,12 @@
 //
 //  AppDelegate.m
-//  JYang
+//  123
 //
-//  Created by kaicaibao on 16/1/8.
+//  Created by kaicaibao on 16/1/11.
 //  Copyright © 2016年 kaicaibao. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import "FinderViewController.h"
-#import "SorterViewController.h"
-#import "MyerViewController.h"
-#import <MobClick.h>
 
 @interface AppDelegate ()
 
@@ -21,42 +17,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
-    //友盟统计
-    [MobClick startWithAppkey:@"568f3b1b67e58e07a0000fe0" reportPolicy:BATCH   channelId:nil];
-    
-    
-    _window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    [_window setBackgroundColor:[UIColor whiteColor]];
-    
-    //发现
-    FinderViewController * findCtrl =[[FinderViewController alloc]init];
-    findCtrl.tabBarItem.title = @"发现";
-    findCtrl.tabBarItem.image = [UIImage imageNamed:@""];
-    
-    //分类
-    SorterViewController * sortCtrl = [[SorterViewController alloc]init];
-    sortCtrl.tabBarItem.title = @"分类";
-    sortCtrl.tabBarItem.image = [UIImage imageNamed:@""];
-    
-    //我的
-    MyerViewController   * myerCtrl = [[MyerViewController alloc]init];
-    myerCtrl.tabBarItem.title = @"我的";
-    myerCtrl.tabBarItem.image = [UIImage imageNamed:@""];
-    
-    //设置为标签页
-    UITabBarController * tabbar = [[UITabBarController alloc]init];
-    tabbar.viewControllers      = @[findCtrl,sortCtrl,myerCtrl];
-    tabbar.tabBar.tintColor     = [UIColor greenColor];
-    //设置导航
-    UINavigationController * nav = [[UINavigationController alloc]initWithRootViewController:tabbar];
-    //    [nav.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
-    _window.rootViewController = nav;
-
-    
-    
-    
-    
     return YES;
 }
 
