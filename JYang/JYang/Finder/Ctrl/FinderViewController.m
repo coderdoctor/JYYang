@@ -14,6 +14,7 @@
 #import "SubMode.h"
 #import "FinderCollectionViewCell.h"
 #import "MJExtension.h"
+#import "HeaderCollectionReusableView.h"
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 
 @interface FinderViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
@@ -45,7 +46,7 @@
     UICollectionViewFlowLayout *collectionViewLayout = (UICollectionViewFlowLayout *)_collectionView.collectionViewLayout;
     collectionViewLayout.headerReferenceSize = CGSizeMake(300, 40);
     //注册页眉
-    [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header"];
+    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([HeaderCollectionReusableView class]) bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header"];
     
     //网络请求
     [self httpRequest];
@@ -130,23 +131,17 @@
 //设置页眉
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     
-//    _lbName.text = nil;
+
     if (kind == UICollectionElementKindSectionHeader) {
         
         
-        UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header" forIndexPath:indexPath];
-        if(!headerView){
-            headerView = [[UICollectionReusableView alloc]init];
-        }
+        HeaderCollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header" forIndexPath:indexPath];
         
-        for (UIView * topView in headerView.subviews) {
-            [topView removeFromSuperview];
-        }
-            _lbName = [[UILabel alloc]initWithFrame:CGRectMake(12, 0, SCREEN_WIDTH, 44)];
-            DataMode *dataMode  = [_findDateArray objectAtIndex:indexPath.section];
-            _lbName.text = dataMode.title;
-        NSLog(@"-------------%li",indexPath.section);
-            [headerView addSubview:_lbName];
+        
+
+        DataMode *dataMode  = [_findDateArray objectAtIndex:indexPath.section];
+        headerView.model = dataMode;
+
         
         return headerView;
     }

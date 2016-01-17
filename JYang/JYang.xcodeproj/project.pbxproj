@@ -28,6 +28,8 @@
 		7512E55A1C3F6A02003C8AC3 /* SorterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7512E54C1C3F6A02003C8AC3 /* SorterCell.xib */; };
 		7512E55E1C3F776A003C8AC3 /* FinderCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7512E55C1C3F776A003C8AC3 /* FinderCollectionViewCell.m */; };
 		7512E55F1C3F776A003C8AC3 /* FinderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7512E55D1C3F776A003C8AC3 /* FinderCollectionViewCell.xib */; };
+		7517416B1C4BD82B0010E33A /* HeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 751741691C4BD82B0010E33A /* HeaderCollectionReusableView.m */; };
+		7517416C1C4BD82B0010E33A /* HeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7517416A1C4BD82B0010E33A /* HeaderCollectionReusableView.xib */; };
 		7519EC211C43B80400FF17CD /* MyerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7519EC1F1C43B80400FF17CD /* MyerTableViewCell.m */; };
 		7519EC221C43B80400FF17CD /* MyerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7519EC201C43B80400FF17CD /* MyerTableViewCell.xib */; };
 		B43A0931522B10FFD8CE626A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 898A0500F8F62EAFF7D3771D /* libPods.a */; };
@@ -89,6 +91,9 @@
 		7512E55B1C3F776A003C8AC3 /* FinderCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinderCollectionViewCell.h; sourceTree = "<group>"; };
 		7512E55C1C3F776A003C8AC3 /* FinderCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinderCollectionViewCell.m; sourceTree = "<group>"; };
 		7512E55D1C3F776A003C8AC3 /* FinderCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FinderCollectionViewCell.xib; sourceTree = "<group>"; };
+		751741681C4BD82B0010E33A /* HeaderCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderCollectionReusableView.h; sourceTree = "<group>"; };
+		751741691C4BD82B0010E33A /* HeaderCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderCollectionReusableView.m; sourceTree = "<group>"; };
+		7517416A1C4BD82B0010E33A /* HeaderCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 		7519EC1D1C43AF3D00FF17CD /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		7519EC1E1C43B80400FF17CD /* MyerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyerTableViewCell.h; sourceTree = "<group>"; };
 		7519EC1F1C43B80400FF17CD /* MyerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyerTableViewCell.m; sourceTree = "<group>"; };
@@ -228,6 +233,9 @@
 		7512E5371C3F6A02003C8AC3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				751741681C4BD82B0010E33A /* HeaderCollectionReusableView.h */,
+				751741691C4BD82B0010E33A /* HeaderCollectionReusableView.m */,
+				7517416A1C4BD82B0010E33A /* HeaderCollectionReusableView.xib */,
 				7512E55B1C3F776A003C8AC3 /* FinderCollectionViewCell.h */,
 				7512E55C1C3F776A003C8AC3 /* FinderCollectionViewCell.m */,
 				7512E55D1C3F776A003C8AC3 /* FinderCollectionViewCell.xib */,
@@ -448,6 +456,7 @@
 				7512E5031C3F6696003C8AC3 /* Assets.xcassets in Resources */,
 				7519EC221C43B80400FF17CD /* MyerTableViewCell.xib in Resources */,
 				7512E55F1C3F776A003C8AC3 /* FinderCollectionViewCell.xib in Resources */,
+				7517416C1C4BD82B0010E33A /* HeaderCollectionReusableView.xib in Resources */,
 				7512E5561C3F6A02003C8AC3 /* MyerViewController.xib in Resources */,
 				7512E55A1C3F6A02003C8AC3 /* SorterCell.xib in Resources */,
 				7512E5011C3F6696003C8AC3 /* Main.storyboard in Resources */,
@@ -523,6 +532,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7517416B1C4BD82B0010E33A /* HeaderCollectionReusableView.m in Sources */,
 				7512E5571C3F6A02003C8AC3 /* SorterViewController.m in Sources */,
 				7512E54D1C3F6A02003C8AC3 /* FinderViewController.m in Sources */,
 				7519EC211C43B80400FF17CD /* MyerTableViewCell.m in Sources */,
