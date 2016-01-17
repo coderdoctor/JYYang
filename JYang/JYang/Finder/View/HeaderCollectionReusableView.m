@@ -22,6 +22,8 @@
 
 - (void)awakeFromNib {
     [_lbimage setBackgroundColor:[UIColor greenColor]];
+    
+    
     //设置圆角
     _lbimage.layer.cornerRadius = 3;
     _lbimage.layer.masksToBounds = YES;
