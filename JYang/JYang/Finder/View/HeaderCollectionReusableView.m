@@ -10,8 +10,7 @@
 
 @interface HeaderCollectionReusableView ()
 
-//题目
-@property (nonatomic, weak) IBOutlet UILabel * nameLable;
+
 
 //最右边图片
 @property (nonatomic , weak) IBOutlet UILabel * lbimage;
@@ -32,7 +31,7 @@
 
 - (void)setModel:(DataMode *)model
 {
-    self.nameLable.text = model.title;
+    [self.headerButton setTitle:model.title forState:UIControlStateNormal];
 }
 
 @end

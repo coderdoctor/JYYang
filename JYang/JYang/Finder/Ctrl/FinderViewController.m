@@ -39,7 +39,7 @@
     //注册网格cell
     self.collectionView.delegate   = self;
     self.collectionView.dataSource = self;
-   
+    
     UINib * nibCell = [UINib nibWithNibName:@"FinderCollectionViewCell" bundle:[NSBundle mainBundle]];
     [self.collectionView registerNib:nibCell forCellWithReuseIdentifier:@"finderFirst"];
     //设置页眉尺寸
@@ -61,12 +61,12 @@
         nil;
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
-//        NSLog(@"%@",[[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding]);
+        //        NSLog(@"%@",[[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding]);
         
         NSDictionary * dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
         _findMode = [FindMode mj_objectWithKeyValues:dic];
         [_findDateArray addObjectsFromArray:_findMode.data];
-     
+        
         
         [_collectionView reloadData];
         
@@ -105,15 +105,15 @@
 
 //该 法返回值决定每个单元格与上、下、左、右的间距
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout: (UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
-//    UIEdgeInsets insets = {top, left, bottom, right};
+    //    UIEdgeInsets insets = {top, left, bottom, right};
     return UIEdgeInsetsMake((SCREEN_WIDTH-((SCREEN_WIDTH/2-12)*2))/3, (SCREEN_WIDTH-((SCREEN_WIDTH/2-12)*2))/3, (SCREEN_WIDTH-((SCREEN_WIDTH/2-12)*2))/3, (SCREEN_WIDTH-((SCREEN_WIDTH/2-12)*2))/3);
-
+    
 }
 //每个分组的items
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-//    _subArray = [];
-  return  ((DataMode *)[_findDateArray objectAtIndex:section]).sub.count;
-
+    //    _subArray = [];
+    return  ((DataMode *)[_findDateArray objectAtIndex:section]).sub.count;
+    
 }
 
 
@@ -131,24 +131,24 @@
 //设置页眉
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     
-
+    
     if (kind == UICollectionElementKindSectionHeader) {
         
         
         HeaderCollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header" forIndexPath:indexPath];
         
         
-
+        
         DataMode *dataMode  = [_findDateArray objectAtIndex:indexPath.section];
         headerView.model = dataMode;
-
+        
         
         return headerView;
     }
-   
+    
     
     return nil;
-
+    
     
 }
 
@@ -159,13 +159,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

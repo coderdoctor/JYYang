@@ -13,5 +13,7 @@
 @interface HeaderCollectionReusableView : UICollectionReusableView
 
 @property (nonatomic, strong) DataMode * model;
-  
+
+//页眉button
+@property (nonatomic , strong) IBOutlet UIButton * headerButton;
 @end
